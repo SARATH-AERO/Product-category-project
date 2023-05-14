@@ -25,6 +25,7 @@ public class ProductCategoryController {
         return new ResponseEntity<>(response , HttpStatus.OK);
     }
 
+    @CrossOrigin("http://127.0.0.1:3000")
     @GetMapping("/get-product-category/{name}")
     public ResponseEntity<Object> getProductCategory(@PathVariable String name){
         Object list = productCategoryService.getProductCategory(name);

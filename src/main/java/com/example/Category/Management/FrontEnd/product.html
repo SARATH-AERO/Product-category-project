@@ -1,0 +1,30 @@
+<!doctype >
+<html lang="english">
+<head>
+    <title> product category management</title>
+</head>
+
+<body>
+<h1> get all products by category</h1>
+
+<a href="http://localhost:8080/product-category/get-product-category/mobile" target="iframe_a"> get product </a>
+<iframe src="demo_iframe.htm" name="iframe_a" height="300px" width="100%" title="Iframe Example">sdfsdfsdfsdfsdfsdf</iframe>
+
+
+<ul></ul>
+
+<script>
+    fetch('http://localhost:8080/product-category/get-product-category/mobile')
+    .then(res => console.log(res))
+        return res.json();
+    })
+   .then(data =>
+        data.forEach(user => {
+        const markup = `<li>${user.name}</li>`;
+        document.querySelector('ul').insertAdjacentHTML('beforeend' ,markup);
+        });
+    })
+    .catch(error => console.log(error));
+</script>
+</body>
+</html>

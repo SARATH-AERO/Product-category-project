@@ -96,6 +96,7 @@ public class ProductService {
             list.add(product);
             productCategoryEntity.setProducts(list);
             product.setProductCategoryEntity(productCategoryEntity);
+            productRepository.save(product);
             return product.getProductName()+" "+property+" details updated "+value+" successfully";
 
         }else

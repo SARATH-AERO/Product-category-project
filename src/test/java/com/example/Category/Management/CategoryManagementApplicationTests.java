@@ -7,6 +7,7 @@ import com.example.Category.Management.Entites.ProductCategoryEntity;
 import com.example.Category.Management.Entites.ProductEntity;
 import com.example.Category.Management.Repositories.ProductCategoryRepository;
 import com.example.Category.Management.Repositories.ProductRepository;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
