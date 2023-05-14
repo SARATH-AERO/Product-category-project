@@ -26,8 +26,8 @@ public class ProductCategoryController {
     }
 
     @GetMapping("/get-product-category/{name}")
-    public ResponseEntity<List<ProductResponseDto>> getProductCategory(@PathVariable String name){
-        List<ProductResponseDto> list = productCategoryService.getProductCategory(name);
+    public ResponseEntity<Object> getProductCategory(@PathVariable String name){
+        Object list = productCategoryService.getProductCategory(name);
         return new ResponseEntity<>(list,HttpStatus.OK);
     }
 

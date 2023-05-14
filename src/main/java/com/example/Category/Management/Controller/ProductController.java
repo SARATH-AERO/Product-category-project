@@ -1,5 +1,4 @@
 package com.example.Category.Management.Controller;
-
 import com.example.Category.Management.Dtos.ProductEntryDto;
 import com.example.Category.Management.Dtos.ProductResponseDto;
 import com.example.Category.Management.Services.ProductService;
@@ -22,13 +21,13 @@ public class ProductController {
     }
 
     @GetMapping("/get-product/{name}")
-    public  ResponseEntity<ProductResponseDto> getProduct(@PathVariable String name){
-        ProductResponseDto product = productService.getProduct(name);
+    public  ResponseEntity<Object> getProduct(@PathVariable String name){
+        Object product = productService.getProduct(name);
         return new ResponseEntity<>(product , HttpStatus.OK);
     }
 
     @DeleteMapping("/delete-product/{name}")
-    public ResponseEntity<String> deleteProduct(@PathVariable int name){
+    public ResponseEntity<String> deleteProduct(@PathVariable String name){
         String response = productService.deleteProduct(name);
         return new ResponseEntity<>(response , HttpStatus.OK);
     }

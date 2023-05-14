@@ -23,6 +23,6 @@ public class ProductCategoryEntity {
 
     private String productCategory;
 
-    @OneToMany(mappedBy = "productCategoryEntity",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "productCategoryEntity",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<ProductEntity> products = new ArrayList<>();
 }
