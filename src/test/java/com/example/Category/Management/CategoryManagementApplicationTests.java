@@ -43,9 +43,9 @@ class CategoryManagementApplicationTests {
 
 	@Test
 	public void addProductCategory() {
-		productCategoryController.addProductCategory("mobiles");
-		ProductCategoryEntity productCategoryEntity = productCategoryRepository.findByName("mobiles");
-		assertEquals(productCategoryEntity.getProductCategory() , "mobiles");
+		productCategoryController.addProductCategory("appliances");
+		ProductCategoryEntity productCategoryEntity = productCategoryRepository.findByName("appliances");
+		assertEquals(productCategoryEntity.getProductCategory() , "appliances");
 	}
 
 	@Test

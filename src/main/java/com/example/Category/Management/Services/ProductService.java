@@ -71,7 +71,11 @@ public class ProductService {
     public String deleteProduct(String productName) {
         if(productRepository.findByName(productName) != null ) {
             ProductEntity product = productRepository.findByName(productName);
+            ProductCategoryEntity productCategoryEntity = productCategoryRepository.findByName(product.getProductCategoryName());
             int productId = product.getProductId();
+            List<ProductEntity> list = productCategoryEntity.getProducts();
+            list.remove(product);
+            productCategoryEntity.setProducts(list);
             productRepository.deleteById(productId);
             return productName+" product removed successfully";
         }else
